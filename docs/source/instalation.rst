@@ -26,3 +26,9 @@ Instalējam Django:
 .. code-block:: console
 
    (.venv) $ pip install django
+   
+Izveidojam projektu:
+  
+.. code-block::console
+
+django-admin startproject webpack
