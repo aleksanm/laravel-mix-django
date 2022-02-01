@@ -20,7 +20,7 @@ Vispirms updeitojam pip:
 
 .. code-block:: console
    :linenos:
-   :dedent: 7
+          :dedent: 7
 
    (venv)$python -m pip install --upgrade pip
 
