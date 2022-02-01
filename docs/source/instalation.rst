@@ -31,6 +31,6 @@ Izveidojam projektu:
   
 .. code-block:: console
    
-   ^.{7}\k(venv)$ django-admin startproject webpack
+   ^.{7}\K(venv)$ django-admin startproject webpack
 
 bāc
