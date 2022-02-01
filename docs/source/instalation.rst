@@ -15,7 +15,6 @@ Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un aktiviējam:
    $source venv/bin/activate
    (venv)$
 
-
 Vispirms updeitojam pip:
 
 .. code-block:: console
