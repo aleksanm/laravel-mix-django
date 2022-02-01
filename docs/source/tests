@@ -1,0 +1,206 @@
+Nepieciešams, lai ir uzinstalēts nodejs
+
+Pārvietojamies direktorijā, kur atrodas setings.py
+
+cd webpack/webpack
+
+touch webpack.mix.js
+
+npm init -y
+
+npm install laravel-mix --save-dev
+
+tad uztaisam direktoriju assets ar apakšdirektorijām un failiem
+
+jābūt šādi
+
+assets/
+├── css
+│   └── app.css
+├── js
+│   └── app.js
+└── scss
+    └── app.scss
+
+tad uztaisam direktoriju static ar apakšdirektorijām
+
+jābūt šādi
+
+static/
+└── webpack
+    ├── css
+    └── js
+
+šobrīd projektā izskatās šādi:
+
+webpack
+├── manage.py
+├── README.txt
+└── webpack
+    ├── asgi.py
+    ├── assets
+    ├── __init__.py
+    ├── node_modules
+    ├── package.json
+    ├── package-lock.json
+    ├── settings.py
+    ├── static
+    ├── urls.py
+    ├── webpack.mix.js
+    └── wsgi.py
+
+
+rediģējam webpack.mix.js
+
+// webpack.mix.js
+
+let mix = require('laravel-mix');
+
+mix.js('assets/js/app.js', 'static/webpack/js')
+    .sass('assets/scss/app.scss', 'static/webpack/css/')
+    .css('assets/css/app.css', 'static/webpack/css');
+
+Instalējam jquery ar npm
+
+npm install jquery
+
+rediģējam webpack.mix.js un pievienojam jquery, lai ņem src nevis dist
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            jquery: 'jquery/src/jquery'
+        }
+    }
+});
+
+rediģējam assets/js/bootstrap.js un pievienojam instalēto jquery
+
+window.$ = window.jQuery = require('jquery');
+
+rediģējam assets/js/app.js un importējam augstākminēto bootstrap.js failu
+
+import './bootstrap';
+
+palaižam komandu 
+
+npx mix 
+
+tā pieinstalē trūkstošās pakas
+
+un palaižam vēlreiz 
+
+npx mix
+
+rezultāts: ✔ Compiled Successfully in 827ms
+
+
+redzam, ka ir parādījies fails app.js direktorijā static/js/app.js un ir aizpildījies ar saturu
+
+redzam, ka ir parādījies fails app.css direktorijā static/css/app.css un ir aizpildījies ar saturu (šobrīd nav stilu, nav satura)
+
+
+tad instalējam bootstrap 5 un popperjs
+
+npm install bootstrap --save-dev 
+
+npm install @popperjs/core --save-dev
+
+pievienojam failā assets/scss/app.scss bootstrap ierakstu
+
+@import "~bootstrap/scss/bootstrap";
+
+rediģējam assets/js/app.js un importējam bootstrap un lodash
+
+window._ = require("lodash");
+import "bootstrap";
+
+notestējam ar npx mix ✔ Compiled Successfully in 4392ms
+
+
+redzam, ka ir aizpildījies static/css/app.css fails ar saturu
+
+Tas viss. 
+
+apache2 lai servē izveidotos failus, kurus tur iemovos collectstatic komanda
+
+Dgango settings.py norādam root static directoriju un arī STATIC_ROOT absolute path
+
+manā gadījumā
+
+STATICFILES_DIRS = [
+    BASE_DIR / "webpack/static",
+]
+
+STATIC_ROOT= '/var/www/html/static'
+
+Tagad django palaižam statiskos kolekcionētājus no direktorijas, kur ir manage.py
+
+cd ..
+
+python3 manage.py collectstatic
+
+
+un norādītajā direktorijā ir ievācies static saturs!!!
+
+tad visos html failos head sadaļā:
+
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'webpack/css/app.css' %}">
+    <script src="{% static 'webpack/js/app.js' %}"></script>
+
+Katreiz papildinot js vai css to dara failā assets/app.js vai assets/app.css tas viss sakompilējas vienā failā
+
+ja webpack.mixmix failā pieliek norādi uz citu direktoriju, kur ņemt js sourcu, tad tas paņem un piekompilē to klāt, piemēram:
+
+
+// 1.
+mix.js('assets/js/app.js', 'static/webpack/js')
+
+// 2.
+mix.js('assets/js/alpine.js', 'static/webpack/js')
+
+rezumē:
+
+npx mix - nokompilē jquery un bootstrap kopā uz 1.18 MiB
+
+npx mix --production nokompilē jquery un bootstrap kopā uz 248 KiB
+
+starpība liela
+
+
+finālā projekts šāds:
+
+webpack
+├── db.sqlite3
+├── manage.py
+├── mysite
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   ├── models.py
+│   ├── __pycache__
+│   ├── static
+│   ├── templates
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── README.txt
+└── webpack
+    ├── asgi.py
+    ├── assets
+    ├── __init__.py
+    ├── mix-manifest.json
+    ├── node_modules
+    ├── package.json
+    ├── package-lock.json
+    ├── __pycache__
+    ├── settings.py
+    ├── static
+    ├── urls.py
+    ├── views.py
+    ├── webpack.mix.js
+    └── wsgi.py
+
+
