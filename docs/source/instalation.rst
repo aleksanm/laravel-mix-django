@@ -36,6 +36,6 @@ Izveidojam projektu:
 Atceramies par "." beigās
 .. code-bloc:: console
    
-   touch webpack.mix.js
-   npm init -y
-   npm install laravel-mix
+   $ touch webpack.mix.js
+   $ npm init -y
+   $ npm install laravel-mix
