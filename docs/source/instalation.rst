@@ -53,18 +53,23 @@ Instalējam laravel-mix:
 
    $ npm install laravel-mix
 
-Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem
+Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) un tajos attiecīgi app.css, app.js, app.scss
+
+Pieliekam vēl klāt direktoriju static ar apakšdirektorijām css un js:
 
 Jābūt šādi:
 
 .. code-block:: console
-   
+
    webpack
       ├── HOWTO.rst
       ├── assets
       │   ├── css
+      │   │   └── app.css
       │   ├── js
+      │   │   └── app.js
       │   └── scss
+      │       └── app.scss
       ├── manage.py
       ├── mysite
       │   ├── __init__.py
@@ -75,13 +80,24 @@ Jābūt šādi:
       ├── node_modules [507 entries exceeds filelimit, not opening dir]
       ├── package-lock.json
       ├── package.json
+      ├── static
+      │   ├── css
+      │   └── js
       ├── venv
-      │   ├── bin
+      │   ├── bin [37 entries exceeds filelimit, not opening dir]
       │   ├── include
       │   ├── lib
+      │   │   └── python3.10
       │   ├── lib64 -> lib
       │   ├── pyvenv.cfg
       │   └── share
+      │       └── doc
       └── webpack.mix.js
-      
-   
+
+Pieliekam vēl klāt direktoriju a=static ar apakšdirektorijām js un css:
+
+   .. code-block:: console
+
+     
+
+Tā kaut kā līdz šim.
