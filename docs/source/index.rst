@@ -16,5 +16,5 @@ Contents
 
 .. toctree::
 
-   instalation
+   Sakam
    api
