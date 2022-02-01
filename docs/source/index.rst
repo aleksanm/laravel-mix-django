@@ -1,17 +1,14 @@
 Welcome to laravel-mix-django documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+laravel-mix-django ir mēģinājums, kā php framework fīčas integrēt Django. 
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Ieskaties :doc:`usage` kā man gāja ar šīs fīčas implementēšanu
+sadaļā :ref:`installation`.
 
 .. note::
 
-   This project is under active development.
+   Šis tutoriālis ir mēģinājums iemācīties rakstīt manuāļus.
 
 Contents
 --------
