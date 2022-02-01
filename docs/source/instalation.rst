@@ -1,12 +1,9 @@
-Instalation
-=====
-
-Tad kā man gāja
+instalation
 =====
 
 .. _installation:
 
-Sākam
+sakam
 ------------
 
 Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un aktiviējam:
