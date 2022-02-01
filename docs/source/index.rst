@@ -1,4 +1,5 @@
-Welcome to laravel-mix-django documentation!
+
+Civ riv laravel-mix-django instalācijā!
 ===================================
 
 laravel-mix-django ir mēģinājums, kā php framework fīčas integrēt Django. 
