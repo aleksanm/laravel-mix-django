@@ -221,9 +221,9 @@ Tagad django palaižam statiskos kolekcionētājus no direktorijas, kur ir manag
 
 .. code-block:: console
 
-   cd ..
+   (venv)$ cd ..
 
-   python3 manage.py collectstatic
+   (venv)$ python3 manage.py collectstatic
 
 Un norādītajā direktorijā ir ievācies static saturs!!!
 
