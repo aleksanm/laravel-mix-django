@@ -4,8 +4,7 @@
 
 laravel-mix-django ir mēģinājums, kā php framework fīčas integrēt Django. 
 
-Ieskaties sadaļa ":doc:`instalation`" ar šīs fīčas implementēšanu
-sadaļā :ref:`installation`.
+Ieskaties sadaļa ":doc:`instalation`", kā tad man gāja ar šīs fīčas implementēšanu -  :ref:`installation`.
 
 .. note::
 
