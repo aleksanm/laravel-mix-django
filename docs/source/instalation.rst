@@ -33,5 +33,9 @@ Izveidojam projektu:
    
    (venv)$ django-admin startproject mysite .
    
-
-
+Atceramies par "." beigās
+.. code-bloc:: console
+   
+   touch webpack.mix.js
+   npm init -y
+   npm install laravel-mix
