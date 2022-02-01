@@ -85,7 +85,10 @@ Jābūt šādi:
       ├── static
       │   └── mysite
       │       ├── css
+      │       │   └── app.css
       │       └── js
+      │           ├── app.js
+      │           └── app.js.LICENSE.txt
       ├── venv
       └── webpack.mix.js
 
@@ -182,17 +185,20 @@ Rediģējam assets/js/app.js un importējam bootstrap un lodash:
 
 Notestējam ar npx mix ✔ Compiled Successfully in 4392ms
 
+.. code-block:: console
+
+   (venv)$ npx mix
+
 Redzam, ka ir aizpildījies static/css/app.css fails ar saturu
 
 Tas viss. 
 
-Pasteidzoties notikumiem pa priekšu:
+Pasteidzoties notikumiem pa priekšu (nokompilē jquery un bootstrap kopā uz 248 KiB):
 
 .. code-block:: console
 
-   (venv)$ npx mix --production // nokompilē jquery un bootstrap kopā uz 248 KiB
-
-
+   (venv)$ npx mix --production 
+   
 apache2 lai servē izveidotos failus, kurus tur iemovos collectstatic komanda
 
 Dgango settings.py norādam root static directoriju un arī STATIC_ROOT absolute path
@@ -288,6 +294,9 @@ Finālā projekts šāds:
       ├── static
       │   └── mysite
       │       ├── css
+      │       │   └── app.css
       │       └── js
+      │           ├── app.js
+      │           └── app.js.LICENSE.txt
       ├── venv
       └── webpack.mix.js
