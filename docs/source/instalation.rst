@@ -53,7 +53,7 @@ Instalējam laravel-mix:
 
    $ npm install laravel-mix
 
-Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) un tajos attiecīgi app.css, app.js, app.scss
+Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) un tajos attiecīgi app.css, app.js/bootstrap.js, app.scss
 
 Pieliekam vēl klāt direktoriju static ar apakšdirektorijām css un js:
 
@@ -67,32 +67,28 @@ Jābūt šādi:
       │   ├── css
       │   │   └── app.css
       │   ├── js
-      │   │   └── app.js
+      │   │   ├── app.js
+      │   │   └── bootstrap.js
       │   └── scss
       │       └── app.scss
       ├── manage.py
+      ├── mix-manifest.json
       ├── mysite
       │   ├── __init__.py
       │   ├── asgi.py
       │   ├── settings.py
       │   ├── urls.py
       │   └── wsgi.py
-      ├── node_modules [507 entries exceeds filelimit, not opening dir]
+      ├── node_modules
       ├── package-lock.json
       ├── package.json
       ├── static
-      │   ├── css
-      │   └── js
+      │   └── mysite
+      │       ├── css
+      │       └── js
       ├── venv
-      │   ├── bin [37 entries exceeds filelimit, not opening dir]
-      │   ├── include
-      │   ├── lib
-      │   │   └── python3.10
-      │   ├── lib64 -> lib
-      │   ├── pyvenv.cfg
-      │   └── share
-      │       └── doc
       └── webpack.mix.js
+
 
 Rediģējam webpack.mix.js:
 
@@ -102,9 +98,9 @@ Rediģējam webpack.mix.js:
 
    let mix = require('laravel-mix');
 
-   mix.js('assets/js/app.js', 'static/webpack/js')
-      .sass('assets/scss/app.scss', 'static/webpack/css/')
-      .css('assets/css/app.css', 'static/webpack/css');
+   mix.js('assets/js/app.js', 'static/mysite/js')
+      .sass('assets/scss/app.scss', 'static/mysite/css/')
+      .css('assets/css/app.css', 'static/mysite/css');
 
 
 Instalējam jquery ar npm:
@@ -133,7 +129,8 @@ Rediģējam assets/js/bootstrap.js un pievienojam instalēto jquery:
 
 .. code-block:: console
 
-   window.$ = window.jQuery = require('jquery');
+   import $ from 'jquery';
+   window.$ = window.jQuery = $;
 
 Rediģējam assets/js/app.js un importējam augstākminēto bootstrap.js failu:
 
@@ -164,9 +161,9 @@ Tad instalējam bootstrap 5 un popperjs:
 
 .. code-block:: console
 
-   npm install bootstrap --save-dev 
+   npm install bootstrap
 
-   npm install @popperjs/core --save-dev
+   npm install @popperjs/core
 
 Pievienojam failā assets/scss/app.scss bootstrap ierakstu:
 
@@ -177,6 +174,8 @@ Pievienojam failā assets/scss/app.scss bootstrap ierakstu:
 Rediģējam assets/js/app.js un importējam bootstrap un lodash:
 
 .. code-block:: console
+
+   ...
 
    window._ = require("lodash");
    import "bootstrap";
@@ -198,7 +197,7 @@ manā gadījumā:
    ...
 
    STATICFILES_DIRS = [
-      BASE_DIR / "webpack/static",
+      BASE_DIR / "static",
    ]
 
    STATIC_ROOT= '/var/www/html/static'
@@ -222,8 +221,8 @@ Tad visos html failos head sadaļā:
    ...
 
    {% load static %}
-      <link rel="stylesheet" type="text/css" href="{% static 'webpack/css/app.css' %}">
-      <script src="{% static 'webpack/js/app.js' %}"></script>
+      <link rel="stylesheet" type="text/css" href="{% static 'mysite/css/app.css' %}">
+      <script src="{% static 'mysite/js/app.js' %}"></script>
 
    ...
 
@@ -259,33 +258,29 @@ Finālā projekts šāds:
 .. code-block:: console
 
    webpack
-      ├── db.sqlite3
+      ├── HOWTO.rst
+      ├── assets
+      │   ├── css
+      │   │   └── app.css
+      │   ├── js
+      │   │   ├── app.js
+      │   │   └── bootstrap.js
+      │   └── scss
+      │       └── app.scss
       ├── manage.py
+      ├── mix-manifest.json
       ├── mysite
-      │   ├── admin.py
-      │   ├── apps.py
-      │   ├── __init__.py
-      │   ├── migrations
-      │   ├── models.py
-      │   ├── __pycache__
-      │   ├── static
-      │   ├── templates
-      │   ├── tests.py
-      │   ├── urls.py
-      │   └── views.py
-      ├── README.txt
-      └── webpack
-         ├── asgi.py
-         ├── assets
-         ├── __init__.py
-         ├── mix-manifest.json
-         ├── node_modules
-         ├── package.json
-         ├── package-lock.json
-         ├── __pycache__
-         ├── settings.py
-         ├── static
-         ├── urls.py
-         ├── views.py
-         ├── webpack.mix.js
-         └── wsgi.py
+      │   ├── __init__.py
+      │   ├── asgi.py
+      │   ├── settings.py
+      │   ├── urls.py
+      │   └── wsgi.py
+      ├── node_modules
+      ├── package-lock.json
+      ├── package.json
+      ├── static
+      │   └── mysite
+      │       ├── css
+      │       └── js
+      ├── venv
+      └── webpack.mix.js
