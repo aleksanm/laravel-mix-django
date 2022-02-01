@@ -3,7 +3,7 @@ Tad kā man gāja
 
 .. _installation:
 
-Installation
+Sākam..
 ------------
 
 Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un kativiējam:
