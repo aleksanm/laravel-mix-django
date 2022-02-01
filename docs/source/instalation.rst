@@ -12,7 +12,7 @@ Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un aktiviējam:
 
    $ mkdir webpack && cd webpack
    $ python -m venv venv
-   $source venv/bin/activate
+   $ source venv/bin/activate
    (venv) $
 
 
