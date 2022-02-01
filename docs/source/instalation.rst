@@ -43,11 +43,13 @@ izveidojam konfigurācijas failu priekš laravel-mix:
    $ touch webpack.mix.js
 
 Inicializējam npm:
+
 .. code-block:: console
 
    $ npm init -y
 
 Instalējam laravel-mix:
+
 .. code-block:: console
 
    $ npm install laravel-mix
