@@ -20,22 +20,18 @@ Vispirms updeitojam pip:
 
 .. code-block:: console
    :linenos:
-   :dedent: 7
-
-          (venv)$python -m pip install --upgrade pip
+   
+   (venv)$ python -m pip install --upgrade pip
 
 Instalējam Django:
 
 .. code-block:: console
    :linenos:
-   :dedent: 7
-
-   (venv)$pip install django
+   
+   (venv)$ pip install django
    
 Izveidojam projektu:
   
 .. code-block:: console
    :linenos:
-   :dedent: 7
-
-   (venv)$django-admin startproject webpack
+   (venv)$ django-admin startproject webpack
