@@ -30,6 +30,6 @@ Instalējam Django:
    
 Izveidojam projektu:
   
-.. code-block::console
+.. code-block:: console
 
    (venv) $ django-admin startproject webpack
