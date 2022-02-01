@@ -58,6 +58,7 @@ Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem
 Jābūt šādi:
 
 .. code-block:: console
+   
    webpack
       ├── HOWTO.rst
       ├── manage.py
