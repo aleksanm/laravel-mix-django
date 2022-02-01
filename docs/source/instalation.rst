@@ -36,10 +36,21 @@ Izveidojam projektu:
 Atceramies par "." beigās
 
 Ruļījam tālāk:
+izveidojam konfigurācijas failu priekš laravel-mix:
 
 .. code-block:: console
    
    $ touch webpack.mix.js
+
+Inicializējam npm:
+.. code-block:: console
+
    $ npm init -y
+
+Instalējam laravel-mix:
+.. code-block:: console
+
    $ npm install laravel-mix
 
+.. code-block:: console
+   $ 
