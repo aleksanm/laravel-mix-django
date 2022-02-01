@@ -35,8 +35,7 @@ Izveidojam projektu:
    
 Atceramies par "." beigās
 
-Ruļījam tālāk:
-izveidojam konfigurācijas failu priekš laravel-mix:
+Ruļījam tālāk un izveidojam konfigurācijas failu priekš laravel-mix:
 
 .. code-block:: console
    
@@ -54,5 +53,17 @@ Instalējam laravel-mix:
 
    $ npm install laravel-mix
 
+Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem
+
+Jābūt šādi:
+
 .. code-block:: console
-   $ 
+   webpack
+      ├── HOWTO.rst
+      ├── manage.py
+      ├── mysite
+      ├── node_modules
+      ├── package-lock.json
+      ├── package.json
+      ├── venv
+      └── webpack.mix.js 
