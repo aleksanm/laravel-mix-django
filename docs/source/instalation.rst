@@ -8,7 +8,7 @@ Sākam
 
 Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un aktiviējam:
 
-.. code-block:: bash
+.. code-block:: console
 
    $mkdir webpack && cd webpack
    $python -m venv venv
@@ -17,19 +17,19 @@ Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un aktiviējam:
 
 Vispirms updeitojam pip:
 
-.. code-block:: bash
+.. code-block:: console
    
    $VENV python -m pip install --upgrade pip
 
 Instalējam Django:
 
-.. code-block:: bash
+.. code-block:: console
    
    $VENV pip install django
    
 Izveidojam projektu:
   
-.. code-block:: bash
+.. code-block:: python
    
-   $VENV django-admin startproject webpack
+   (venv)$ django-admin startproject webpack
 
