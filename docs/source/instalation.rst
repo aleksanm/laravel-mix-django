@@ -10,9 +10,9 @@ Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un aktiviējam:
 
 .. code-block:: console
 
-   $mkdir webpack && cd webpack
-   $python -m venv venv
-   $source venv/bin/activate
+   $ mkdir webpack && cd webpack
+   $ python -m venv venv
+   $ source venv/bin/activate
    (venv)$
 
 Vispirms updeitojam pip:
@@ -39,19 +39,19 @@ Ruļījam tālāk un izveidojam konfigurācijas failu priekš laravel-mix:
 
 .. code-block:: console
    
-   $ touch webpack.mix.js
+   (venv)$  touch webpack.mix.js
 
 Inicializējam npm:
 
 .. code-block:: console
 
-   $ npm init -y
+   (venv)$  npm init -y
 
 Instalējam laravel-mix:
 
 .. code-block:: console
 
-   $ npm install laravel-mix
+   (venv)$  npm install laravel-mix
 
 Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) un tajos attiecīgi app.css, app.js/bootstrap.js, app.scss
 
@@ -107,7 +107,7 @@ Instalējam jquery ar npm:
 
 .. code-block:: console
 
-   npm install jquery
+   (venv)$ npm install jquery
 
 Rediģējam webpack.mix.js un pievienojam jquery, lai ņem src nevis dist:
 
@@ -142,13 +142,13 @@ Palaižam komandu:
 
 .. code-block:: console
 
-   npx mix 
+   (venv)$ npx mix 
 
 Tā pieinstalē trūkstošās pakas un palaižam vēlreiz:
 
 .. code-block:: console
 
-   npx mix
+   (venv)$ npx mix
 
    rezultāts: ✔ Compiled Successfully in 827ms
 
@@ -161,9 +161,9 @@ Tad instalējam bootstrap 5 un popperjs:
 
 .. code-block:: console
 
-   npm install bootstrap
+   (venv)$ npm install bootstrap
 
-   npm install @popperjs/core
+   (venv)$ npm install @popperjs/core
 
 Pievienojam failā assets/scss/app.scss bootstrap ierakstu:
 
@@ -185,6 +185,13 @@ Notestējam ar npx mix ✔ Compiled Successfully in 4392ms
 Redzam, ka ir aizpildījies static/css/app.css fails ar saturu
 
 Tas viss. 
+
+Pasteidzoties notikumiem pa priekšu:
+
+.. code-block:: console
+
+   (venv)$ npx mix --production // nokompilē jquery un bootstrap kopā uz 248 KiB
+
 
 apache2 lai servē izveidotos failus, kurus tur iemovos collectstatic komanda
 
@@ -246,9 +253,9 @@ Rezumē:
 
 .. code-block:: console
 
-   npx mix - nokompilē jquery un bootstrap kopā uz 1.18 MiB
+   (venv)$ npx mix - nokompilē jquery un bootstrap kopā uz 1.18 MiB
 
-   npx mix --production nokompilē jquery un bootstrap kopā uz 248 KiB
+   (venv)$ npx mix --production nokompilē jquery un bootstrap kopā uz 248 KiB
 
 
 Starpība liela
