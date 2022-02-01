@@ -1,3 +1,6 @@
+Instalation
+=====
+
 Tad kā man gāja
 =====
 
