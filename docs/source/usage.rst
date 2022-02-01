@@ -1,4 +1,4 @@
-Usage
+Tad kā man gāja
 =====
 
 .. _installation:
@@ -6,7 +6,22 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+Izveidojam vēlamo folderi. Tajā izveidojam virtual enviroment un kativiējam:
+
+.. code-block:: console
+
+   $ mkdir webpack && cd webpack
+   $ python -m venv venv
+   $source venv/bin/activate
+
+
+Vispirms updeitojam pip:
+
+.. code-block:: console
+
+   (.venv) $ python -m pip install --upgrade pip
+
+Izveidojam vēlamo folderi un uzinstalējam Django:
 
 .. code-block:: console
 
