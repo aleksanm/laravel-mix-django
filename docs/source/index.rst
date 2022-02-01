@@ -16,4 +16,5 @@ Contents
 .. toctree::
 
    Instalation
+   Tad kā man gāja
    Sakam
