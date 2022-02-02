@@ -63,9 +63,9 @@ Pieliekam vēl klāt direktoriju static ar apakšdirektorijām css un js:
    
    (venv)$  touch assets/css/app.css
    
-   (venv)$  touch assets/css/app.css
-   
    (venv)$  touch assets/js/app.js
+   
+   (venv)$  touch assets/js/bootstrap.js
    
    (venv)$  touch assets/scss/app.scss
    
