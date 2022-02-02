@@ -57,6 +57,20 @@ Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) 
 
 Pieliekam vēl klāt direktoriju static ar apakšdirektorijām css un js:
 
+.. code-block:: console
+
+   (venv)$  mkdir assets/{css/js/scss}
+   
+   (venv)$  touch assets/css/app.css
+   
+   (venv)$  touch assets/css/app.css
+   
+   (venv)$  touch assets/js/app.js
+   
+   (venv)$  touch assets/scss/app.scss
+   
+   (venv)$  mkdir static/mysite/{css/js}
+
 Jābūt šādi:
 
 .. code-block:: console
