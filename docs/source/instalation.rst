@@ -53,7 +53,7 @@ Instalējam laravel-mix:
 
    (venv)$  npm install laravel-mix
 
-Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) un tajos attiecīgi app.css, app.js/bootstrap.js, app.scss
+Tad uztaisam direktoriju assets ar apakšdirektorijām un failiem (css,js,scss) un tajos attiecīgi app.css, app.js/app.js, app.js/bootstrap.js, app.scss
 
 Pieliekam vēl klāt direktoriju static ar apakšdirektorijām css un js:
 
